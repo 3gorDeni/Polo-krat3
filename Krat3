@@ -1,0 +1,36 @@
+namespace ConsoleApp20
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			// Сформировать массив из положительных элементов первого кратных 3,либо вывести сообщение "Таких элементов нету"
+			int n, i,kol;
+			Console.WriteLine("Введите кол-во элементов массива");
+			n = Convert.ToInt32(Console.ReadLine());
+			Random rand = new Random();
+			int[] arr = new int[n];
+			Console.WriteLine();
+			for (i = 0; i < n; i++)
+			{
+				arr[i] = rand.Next(-10, 10);
+				Console.WriteLine(arr[i]+" ");
+			}
+			Console.WriteLine();
+			kol = 0;
+			int[] arr1 = new int[n];
+			for (i = 0; i < n; i++)
+			{
+				if (arr[i]>0 && arr[i]%3==0)
+				{
+					arr1[i] = arr[i];
+					Console.WriteLine(arr1[i] + " ");
+					kol++;
+				}
+			}
+			if (kol == 0)
+				Console.WriteLine("Таких элементов нету");
+			Console.ReadKey();
+		}
+	}
+}
